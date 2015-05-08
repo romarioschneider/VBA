@@ -1,7 +1,9 @@
 Option Explicit
 Public Sub aprempir(xmas() As Single, ymas() As Single, n)
+
 Dim epsmas() As Variant, xar As Single, xgeom As Single, xgarm As Single, p1 As Integer, epsmin As Single, epskoord As Integer
 Dim yar As Single, ygeom As Single, ygarm As Single, yar2 As Single, ygeom2 As Single, ygarm2 As Single, i As Integer
+
 xar = (xmas(1) + xmas(n)) / 2
 xgeom = Sqr(xmas(1) * xmas(n))
 xgarm = (2 * xmas(1) * xmas(n)) / (xmas(1) + xmas(n))
@@ -11,18 +13,19 @@ ygarm = (2 * ymas(1) * ymas(n)) / (ymas(1) + ymas(n))
 
 yar2 = 0
 For i = 1 To n
-If xmas(i) = xar Then
-yar2 = ymas(i)
-Exit For
-End If
+	If xmas(i) = xar Then
+		yar2 = ymas(i)
+		Exit For
+	End If
 Next i
+
 If yar2 = 0 Then
-For i = 1 To n
-If xar > xmas(i) Then
-p1 = p1 + 1
-End If
-Next i
-yar2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xar - xmas(p1))
+	For i = 1 To n
+		If xar > xmas(i) Then
+			p1 = p1 + 1
+		End If
+	Next i
+	yar2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xar - xmas(p1))
 End If
 
 p1 = 0
