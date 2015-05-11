@@ -50,18 +50,18 @@ p1 = 0
 
 ygarm2 = 0
 For i = 1 To n
-If xmas(i) = xgarm Then
-ygarm2 = ymas(i)
-Exit For
-End If
+	If xmas(i) = xgarm Then
+		ygarm2 = ymas(i)
+		Exit For
+	End If
 Next i
 If ygarm2 = 0 Then
-For i = 1 To n
-If xgarm > xmas(i) Then
-p1 = p1 + 1
-End If
-Next i
-ygarm2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xgarm - xmas(p1))
+	For i = 1 To n
+		If xgarm > xmas(i) Then
+			p1 = p1 + 1
+		End If
+	Next i
+	ygarm2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xgarm - xmas(p1))
 End If
 ReDim epsmas(2, 7) As Variant
 epsmas(1, 1) = Abs(yar2 - yar): epsmas(2, 1) = "y = ax+b"
