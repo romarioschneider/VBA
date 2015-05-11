@@ -32,18 +32,18 @@ p1 = 0
 
 ygeom2 = 0
 For i = 1 To n
-If xmas(i) = xgeom Then
-ygeom2 = ymas(i)
-Exit For
-End If
+	If xmas(i) = xgeom Then
+		ygeom2 = ymas(i)
+		Exit For
+	End If
 Next i
 If ygeom2 = 0 Then
-For i = 1 To n
-If xgeom > xmas(i) Then
-p1 = p1 + 1
-End If
-Next i
-ygeom2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xgeom - xmas(p1))
+	For i = 1 To n
+		If xgeom > xmas(i) Then
+			p1 = p1 + 1
+		End If
+	Next i
+	ygeom2 = ymas(p1) + (ymas(p1 + 1) - ymas(p1)) / (xmas(p1 + 1) - xmas(p1)) * (xgeom - xmas(p1))
 End If
 
 p1 = 0
